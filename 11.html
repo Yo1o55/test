@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.2/dist/echarts.min.js"></script>
+    <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            。 background-color: #141726;
+            background-size: cover;
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .fq {
+            height: 80px;
+            margin: 0 auto;
+            border: 0;
+            display: flex;
+        }
+
+        .sbox1 {
+            width: 150px;
+            height: 30px;
+            border: 1px solid white;
+            margin: 50px 100px 0 50px;
+            color: #fff;
+            border-radius: 50px;
+            text-align: center;
+            background-color: #1A2340;
+        }
+
+        .sbox2 {
+            width: 150px;
+            height: 30px;
+            border: 1px solid white;
+            margin: 50px 100px 0 0;
+            color: #fff;
+            border-radius: 50px;
+            text-align: center;
+            background-color: #1A2340;
+        }
+
+        .sbox3 {
+            width: 150px;
+            height: 30px;
+            border: 1px solid white;
+            margin: 50px 0 0 500px;
+            color: #fff;
+            border-radius: 50px;
+            text-align: center;
+            background-color: #1A2340;
+        }
+
+        .button {
+            background-color: #021a24;
+            border: none;
+            color: white;
+            padding: 0;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+
+        .bj {
+
+            width: 1200px;
+            margin: 50px 0 0 450px;
+            height: 300px;
+            color: #fff;
+            background-image: url(./1231.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            display: block;
+
+        }
+
+        .sp1 {
+            background: linear-gradient(135deg, #D96ABA, #BA9f91, #99A790);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .wz {
+            width: 1000px;
+            height: 100px;
+            border: 0;
+            text-align: center;
+            font-size: 5em;
+            margin-left: -200px;
+            line-height: 400px;
+            text-transform: capitalize;
+        }
+
+        .bbox {
+            width: 1200px;
+            height: 275px;
+            border: 0;
+            margin: 25px 0 0 200px;
+            display: flex;
+        }
+
+        .sj {
+            width: 700px;
+            height: 275px;
+            border: 0;
+            border-radius: 25px;
+
+
+        }
+
+        .zhexian {
+            width: 600px;
+            height: 275px;
+            border: 0;
+            margin-right: 25px;
+            border-radius: 25px;
+            background-color: #1A2340;
+            color: #fff;
+
+        }
+
+        .sj1 {
+            width: 500px;
+            height: 125px;
+            border: 0;
+            margin-bottom: 25px;
+            border-radius: 25px;
+            background-color: #1A2340;
+            color: #fff;
+            display: flex;
+
+        }
+
+        .sj2 {
+            width: 500px;
+            height: 125px;
+            border: 0;
+            border-radius: 25px;
+            background-color: #1A2340;
+            color: #fff;
+            text-align: left;
+
+
+        }
+
+        .z1 {
+            width: 250px;
+            height: 125px;
+            border: 0;
+            margin-right: 50px;
+            text-align: center;
+        }
+
+        .y1 {
+            width: 250px;
+            height: 125px;
+            border: 0;
+            text-align: center;
+        }
+
+        .l1 {
+            color: #5A5F72;
+            font-size: small;
+            margin: 15px 0 0 -70px;
+            list-style: none;
+        }
+
+        .la {
+            color: #5A5F72;
+            font-size: small;
+            margin: 15px 0 0 0;
+            list-style: none;
+        }
+
+        .l2 {
+            font-size: 30px;
+            margin-left: 10px;
+            margin-top: 5px;
+            background: linear-gradient(135deg, #99E0Db, #99dede, #99A790);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            list-style: none;
+
+        }
+
+        .l3 {
+            color: #5A5F72;
+            font-size: small;
+            margin-top: 10px;
+            list-style: none;
+        }
+
+        .l5 {
+            color: #ffff;
+            font-size: small;
+            list-style: none;
+            margin-top: 5px;
+        }
+
+        .lz {
+            color: #ffff;
+            font-size: small;
+            list-style: none;
+            margin-top: 5px;
+        }
+
+
+
+
+        .l6 {
+            color: #5A5F72;
+            font-size: small;
+            margin: 5px 0 10px 30px;
+            list-style: none;
+        }
+
+        .l7 {
+            color: #ffff;
+            font-size: 30px;
+            margin: 5px 0 5px 30px;
+            list-style: none
+        }
+
+        .l8 {
+            color: #5A5F72;
+            font-size: small;
+            margin: 15px 0 5px 30px;
+            list-style: none;
+        }
+
+        .switch {
+            width: 40px;
+            height: 20px;
+            appearance: none;
+            background-color: #5A5F72;
+            border-radius: 40px;
+            border: 1px solid rgba(0, 0, 0, 0);
+            position: relative;
+        }
+
+        .switch::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            background-color: #fff;
+            border-radius: 50px;
+            transition: all 0.15s ease-in-out;
+        }
+
+        .switch:checked::before {
+            left: calc(100% - 20px);
+        }
+
+        .switch::before {
+            transition: all 0.15s ease-in-out;
+        }
+
+        .switch:checked {
+            background-color: #1677ff;
+        }
+
+        .b {
+            width: 500px;
+            height: 50px;
+            margin: -50px 0 0 50px;
+        }
+
+        .a {
+            width: 500px;
+            height: 50px;
+            margin: -50px 0 0 50px;
+        }
+
+        .c {
+            width: 500px;
+            height: 50px;
+            margin: -50px 0 0 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="fq">
+            <div class="sbox1">12 Gwei 1883USD</div>
+            <div class="sbox2"><button class="button">按钮</button /></div>
+            <div class="sbox3">join the fam</div>
+
+        </div>
+    </header>
+    <section>
+        <div class="bj">
+            <div class="wz">
+                <span class="sp1">ultra sound money</span>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="bbox">
+            <div class="zhexian">
+                <div class="zhexian1">
+                    <script src="echarts.min.js"></script>
+                    <script>
+                        var myChart = echarts.init(document.querySelector('.zhexian'));
+                        var option;
+
+                        option = {
+                            xAxis: {
+                                type: 'category',
+                                data: []
+                            },
+                            yAxis: {
+                                type: 'value'
+                            },
+                            series: [
+                                {
+                                    data: [20, 230, 224, 218, 135, 147, 260],
+                                    type: 'line'
+                                }
+                            ]
+                        };
+
+                        myChart.setOption(option);
+
+                    </script>
+                </div>
+                <div class="a"><span class="b">UPDATED 26 SECONDS </span>
+                    <span class="c">AGO SIMUL ATE Pow<input type="checkbox" class="switch"></span>
+                </div>
+            </div>
+            <div class="sj">
+                <div class="sj1">
+                    <div class="z1">
+                        <ul>
+                            <li class="l1">SUPP;Y CHANGE</li>
+                            <li class="l2">+791.15 <span class="sp2">ETH</span></li>
+
+                            <li class="l3">UPDATED 26 SECONDS AGO</li>
+                        </ul>
+                    </div>
+                    <div class="y1">
+                        <ul>
+                            <li class="la">TIME FRAME 7d</li>
+                            <li class="l5"><img src="./remen.png" alt=width="20" height="15">13,070,24 ETH bunned</li>
+                            <li class="lz"><img src="./sd.png" alt=width="20" height="15">13,861.39 ETH issued</li>
+                            <li class="l3">SIMUL AATE POW <input type="checkbox" class="switch"></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sj2">
+                    <ul>
+                        <li class="l6">CURRENT SUPPLY</li>
+                        <li class="l7">120,239,573. ETH</li>
+                        <li class="l8">UPDATED 26 SECONDS AGO</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
